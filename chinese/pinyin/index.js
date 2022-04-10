@@ -5,12 +5,12 @@ import { LocalObject } from "/lib/localJSON.js"
     let data = await (await fetch("data.json")).json()
     let queue = {
         get queue() {
-            while (this._queue.value.length < 2) {
+            while (this._queue.value.length < 5) {
                 let word = randIn(data)
                 let pinyin = new Pinyin()
                 pinyin.fromReadable(word.pron)
                 queue._queue.value.push({
-                    pinyin, word, mistakes: pinyin.mistaked().sort(() => Math.random() - 0.5).slice(0, 1).map((e) => { return { readable: e.mistaked.toReadable() } })
+                    pinyin, word, mistakes: pinyin.mistaked().sort(() => Math.random() - 0.5).slice(0, 3).map((e) => { return { readable: e.mistaked.toReadable() } })
                 })
                 queue._queue.write()
             }

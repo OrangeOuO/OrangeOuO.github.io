@@ -1,19 +1,9 @@
-html,
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+@import url(/public.css);
 span.highlight {
   position: relative;
   background: #121FCF;
+  background: -webkit-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+  background: -moz-linear-gradient(to right, #121FCF 0%, #CF1512 100%);
   background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -26,9 +16,8 @@ span.highlight::after {
   height: 100%;
   z-index: -1;
   content: "";
-  background: rgba(157, 255, 0, 0.3764705882);
+  background: #9dff0060;
 }
-
 .choices {
   width: 100%;
   height: 100%;
@@ -59,6 +48,6 @@ span.highlight::after {
   transform: scale(1.3);
 }
 .choices .wrong {
-  color: rgb(185, 0, 0);
+  color: #b90000;
   transform: scale(0.8);
-}/*# sourceMappingURL=index.css.map */
+}
